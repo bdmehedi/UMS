@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if (Validation::emailValidation(Input::get('email'))){
                 if (!Unique::checkUser(Input::get('email'))){
                     $userData = Unique::getUserData();
-                    if (Input::get('email') === $userData->email && Input::get('password') === $userData->password){
+                    if (Input::get('email') === $userData->email && hash('sha256', Input::get('password')) === $userData->password){
                         Session::put('user', $userData->id);
                         Redirect::to('index.php');
                     }else{

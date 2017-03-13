@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 20, 2017 at 12:11 AM
+-- Generation Time: Mar 13, 2017 at 08:46 PM
 -- Server version: 10.0.29-MariaDB-0ubuntu0.16.04.1
--- PHP Version: 7.0.13-0ubuntu0.16.04.1
+-- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin_login` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` int(64) NOT NULL
+  `password` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `admin_login` (
 --
 
 INSERT INTO `admin_login` (`id`, `email`, `password`) VALUES
-(1, 'codex@gmail.com', 123456);
+(1, 'codex@gmail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,8 @@ INSERT INTO `assign_course` (`assign_id`, `teacher_id`, `assign_teacher_name`, `
 (11, 34, 'Tusar Imran', 'CE-1002', '1.5', '2017-02-18 09:02:06', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (12, 20, 'Taimoon Islam', 'TE-151', '4', '2017-02-19 03:02:10', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (13, 20, 'Taimoon Islam', 'DS-2536', '5', '2017-02-19 03:02:48', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(14, 20, 'Taimoon Islam', 'OP-256', '5', '2017-02-19 03:02:37', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(14, 20, 'Taimoon Islam', 'OP-256', '5', '2017-02-19 03:02:37', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(15, 19, 'Sumon Mahmud', 'BS-107', '4', '2017-03-12 12:03:30', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -342,7 +343,8 @@ INSERT INTO `room_allocation` (`alocation_id`, `alocation_department`, `alocatio
 (10, 'Computer Science & Engineering', 'CS-115', 'A-104', 'Sunday', '10:30', '11:15', '2017-02-16 04:02:49', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (11, 'Computer Science & Engineering', 'CS-115', 'A-104', 'Sunday', '11:16', '12:00', '2017-02-16 04:02:55', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (12, 'Electrical & Electronic Engineering', 'EEE-1102', 'A-102', 'Saturday', '11:30', '12:15', '2017-02-16 05:02:49', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(13, 'Computer Science & Engineering', 'BS-104', 'B-202', 'Monday', '10:30', '11:15', '2017-02-19 03:02:35', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(13, 'Computer Science & Engineering', 'BS-104', 'B-202', 'Monday', '10:30', '11:15', '2017-02-19 03:02:35', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(14, 'Computer Science & Engineering', 'BS-104', 'B-201', 'Monday', '7::2 ', '8::1 ', '2017-03-12 12:03:07', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -581,7 +583,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `assign_course`
 --
 ALTER TABLE `assign_course`
-  MODIFY `assign_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `assign_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `course`
 --
@@ -626,7 +628,7 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT for table `room_allocation`
 --
 ALTER TABLE `room_allocation`
-  MODIFY `alocation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `alocation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `semester`
 --
